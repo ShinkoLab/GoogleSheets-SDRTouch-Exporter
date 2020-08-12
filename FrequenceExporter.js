@@ -40,9 +40,7 @@ function sdrFreqExport() {
         doc.push(sdrFreqExportSheet(ss.getSheets()[i]));
     }
     doc.push('</sdr_presets>');
-
     showDoc(doc.join("\n"));
-
 }
 
 function rawFreq(freq, band) {
