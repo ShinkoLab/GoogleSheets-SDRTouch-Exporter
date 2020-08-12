@@ -15,8 +15,6 @@ function sdrFreqExportSheet(sheet) {
     var range = sheet.getDataRange();
     var values = range.getValues();
 
-    Logger.log(values);
-
     var doc = ['<category id="' + categoryid + '" name="' + name + '">'];
     categoryid++;
     for (var i = 2; i < values.length; i++) {
