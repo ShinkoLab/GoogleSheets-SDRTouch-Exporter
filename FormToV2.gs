@@ -6,34 +6,31 @@ function FormToV2() {
         addColumn(ss.getSheets()[i], "3", "1")
         setText(ss.getSheets()[i], "D2", "Filter", 'bold')
         setFrozen(ss.getSheets()[i], "2", "5");
+        Logger.log("done: " + ss.getSheets()[i].getSheetName());
     }
+    Logger.log("Conversion complete!")
 }
 
 function unFrozen(sheet) {
-    //var sheet = ss.getSheets()[sheetno];
     sheet.setFrozenRows(0);
     sheet.setFrozenColumns(0);
 }
 
 function moveColumn(sheet, src, dest) {
-    //var sheet = ss.getSheets()[sheetno];
     var columnSpec = sheet.getRange(src);
     sheet.moveColumns(columnSpec, dest);
 }
 
 function addColumn(sheet, afterPosition, howMany) {
-    //var sheet = ss.getSheets()[sheetno];
     sheet.insertColumnsAfter(afterPosition, howMany);
 }
 
 function setText(sheet, range, text, weight) {
-    //var sheet = ss.getSheets()[sheetno];
     sheet.getRange(range).setValue(text);
     sheet.getRange(range).setFontWeight(weight);
 }
 
 function setFrozen(sheet, rows, columns) {
-    //var sheet = ss.getSheets()[sheetno];
     sheet.setFrozenRows(rows);
     sheet.setFrozenColumns(columns);
 }
